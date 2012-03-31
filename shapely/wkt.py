@@ -11,7 +11,7 @@ from shapely.geos import lgeos, ReadingError
 def loads(data):
     """Load a geometry from a WKT string."""
     from shapely.geometry.base import geom_factory
-    geom = lgeos.GEOSGeomFromWKT(c_char_p(data))
+    geom = lgeos.GEOSGeomFromWKT(c_char_p(data.encode('utf-8')))
     if not geom:
         raise ReadingError("Could not create geometry because of errors while reading input.")
     return geom_factory(geom)

@@ -57,7 +57,7 @@ def exceptNull(func):
         return func(*args, **kwargs)
     return wrapper
 
-EMPTY = wkb.deserialize('010700000000000000'.decode('hex'))
+EMPTY = wkb.deserialize(bytes.fromhex('010700000000000000'))
 
 class BaseGeometry(object):
     """

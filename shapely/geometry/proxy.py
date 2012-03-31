@@ -4,7 +4,7 @@
 from shapely.geos import lgeos
 from shapely import wkb
 
-EMPTY = wkb.deserialize('010700000000000000'.decode('hex'))
+EMPTY = wkb.deserialize(bytes.fromhex('010700000000000000'))
 
 
 class CachingGeometryProxy(object):
