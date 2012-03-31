@@ -37,9 +37,9 @@ ax.set_title('c) invalid')
 xrange = [-1, 3]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
-ax.set_xticks(range(*xrange) + [xrange[-1]])
+ax.set_xticks(list(range(*xrange)) + [xrange[-1]])
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 #4: invalid self-touching ring
@@ -62,9 +62,9 @@ ax.set_title('d) invalid')
 xrange = [-1, 3]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
-ax.set_xticks(range(*xrange) + [xrange[-1]])
+ax.set_xticks(list(range(*xrange)) + [xrange[-1]])
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 pyplot.show()

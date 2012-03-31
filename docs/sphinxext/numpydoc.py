@@ -49,7 +49,7 @@ def mangle_docstrings(app, what, name, obj, options, lines,
             try:
                 references.append(int(l[len('.. ['):l.index(']')]))
             except ValueError:
-                print "WARNING: invalid reference in %s docstring" % name
+                print("WARNING: invalid reference in %s docstring" % name)
 
     # Start renaming from the biggest number, otherwise we may
     # overwrite references.
@@ -71,7 +71,7 @@ def mangle_signature(app, what, name, obj, options, sig, retann):
         'initializes x; see ' in pydoc.getdoc(obj.__init__)):
         return '', ''
 
-    if not (callable(obj) or hasattr(obj, '__argspec_is_invalid_')): return
+    if not (hasattr(obj, '__call__') or hasattr(obj, '__argspec_is_invalid_')): return
     if not hasattr(obj, '__doc__'): return
 
     doc = SphinxDocString(pydoc.getdoc(obj))
@@ -104,7 +104,7 @@ def monkeypatch_sphinx_ext_autodoc():
     if sphinx.ext.autodoc.format_signature is our_format_signature:
         return
 
-    print "[numpydoc] Monkeypatching sphinx.ext.autodoc ..."
+    print("[numpydoc] Monkeypatching sphinx.ext.autodoc ...")
     _original_format_signature = sphinx.ext.autodoc.format_signature
     sphinx.ext.autodoc.format_signature = our_format_signature
 

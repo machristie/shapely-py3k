@@ -26,9 +26,9 @@ ax.set_title('a) dilation')
 xrange = [-1, 4]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
-ax.set_xticks(range(*xrange) + [xrange[-1]])
+ax.set_xticks(list(range(*xrange)) + [xrange[-1]])
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 #2
@@ -54,9 +54,9 @@ ax.set_title('b) erosion')
 xrange = [-1, 4]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
-ax.set_xticks(range(*xrange) + [xrange[-1]])
+ax.set_xticks(list(range(*xrange)) + [xrange[-1]])
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 pyplot.show()

@@ -17,7 +17,7 @@ def plot_coords(ax, ob):
         ax.plot(x, y, 'o', color='#999999', zorder=1)
 
 def plot_bounds(ax, ob):
-    x, y = zip(*list((p.x, p.y) for p in ob.boundary))
+    x, y = list(zip(*list((p.x, p.y) for p in ob.boundary)))
     ax.plot(x, y, 'o', color='#000000', zorder=1)
 
 def plot_lines(ax, ob):
@@ -41,9 +41,9 @@ ax.set_title('a) simple')
 xrange = [-1, 3]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
-ax.set_xticks(range(*xrange) + [xrange[-1]])
+ax.set_xticks(list(range(*xrange)) + [xrange[-1]])
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 #2: invalid self-touching ring
@@ -60,9 +60,9 @@ ax.set_title('b) complex')
 xrange = [-1, 3]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
-ax.set_xticks(range(*xrange) + [xrange[-1]])
+ax.set_xticks(list(range(*xrange)) + [xrange[-1]])
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 pyplot.show()

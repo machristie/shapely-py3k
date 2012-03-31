@@ -16,7 +16,7 @@ def plot_coords(ax, ob):
     ax.plot(x, y, 'o', color='#999999', zorder=1)
 
 def plot_bounds(ax, ob):
-    x, y = zip(*list((p.x, p.y) for p in ob.boundary))
+    x, y = list(zip(*list((p.x, p.y) for p in ob.boundary)))
     ax.plot(x, y, 'o', color='#000000', zorder=1)
 
 def plot_line(ax, ob):
@@ -39,7 +39,7 @@ xrange = [-1, 4]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 #2: complex line
@@ -56,7 +56,7 @@ xrange = [-2, 3]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 pyplot.show()

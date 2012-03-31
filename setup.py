@@ -87,13 +87,13 @@ class ve_build_ext(build_ext):
     def run(self):
         try:
             build_ext.run(self)
-        except DistutilsPlatformError, x:
+        except DistutilsPlatformError as x:
             raise BuildFailed(x)
 
     def build_extension(self, ext):
         try:
             build_ext.build_extension(self, ext)
-        except ext_errors, x:
+        except ext_errors as x:
             raise BuildFailed(x)
 
 if sys.platform == 'win32':
@@ -119,15 +119,15 @@ try:
         ext_modules=ext_modules,
         **setup_args
     )
-except BuildFailed, ex:
+except BuildFailed as ex:
     BUILD_EXT_WARNING = "Warning: The C extension could not be compiled, speedups are not enabled."
-    print ex
-    print BUILD_EXT_WARNING
-    print "Failure information, if any, is above."
-    print "I'm retrying the build without the C extension now."
+    print(ex)
+    print(BUILD_EXT_WARNING)
+    print("Failure information, if any, is above.")
+    print("I'm retrying the build without the C extension now.")
 
     setup(**setup_args)
 
-    print BUILD_EXT_WARNING
-    print "Plain-Python installation succeeded."
+    print(BUILD_EXT_WARNING)
+    print("Plain-Python installation succeeded.")
 

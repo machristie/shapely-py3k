@@ -13,8 +13,7 @@ def loads(data):
     from shapely.geometry.base import geom_factory
     geom = lgeos.GEOSGeomFromWKT(c_char_p(data))
     if not geom:
-        raise ReadingError, \
-        "Could not create geometry because of errors while reading input."
+        raise ReadingError("Could not create geometry because of errors while reading input.")
     return geom_factory(geom)
 
 def load(fp):

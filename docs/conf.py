@@ -42,8 +42,8 @@ source_suffix = '.txt'
 master_doc = 'index'
 
 # General information about the project.
-project = u'Shapely'
-copyright = u'2011, Sean Gillies, Aron Bierbaum, Kai Lautaportti and others'
+project = 'Shapely'
+copyright = '2011, Sean Gillies, Aron Bierbaum, Kai Lautaportti and others'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -179,8 +179,8 @@ htmlhelp_basename = 'Shapelydoc'
 # Grouping the document tree into LaTeX files. List of tuples
 # (source start file, target name, title, author, documentclass [howto/manual]).
 latex_documents = [
-  ('index', 'Shapely.tex', u'Shapely Documentation',
-   u'Sean Gillies', 'manual'),
+  ('index', 'Shapely.tex', 'Shapely Documentation',
+   'Sean Gillies', 'manual'),
 ]
 
 # The name of an image file (relative to this directory) to place at the top of

@@ -28,9 +28,9 @@ ax.set_title('a.union(b)')
 xrange = [-1, 4]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
-ax.set_xticks(range(*xrange) + [xrange[-1]])
+ax.set_xticks(list(range(*xrange)) + [xrange[-1]])
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 def plot_line(ax, ob, color=GRAY):
@@ -55,9 +55,9 @@ ax.set_title('a.boundary.union(b.boundary)')
 xrange = [-1, 4]
 yrange = [-1, 3]
 ax.set_xlim(*xrange)
-ax.set_xticks(range(*xrange) + [xrange[-1]])
+ax.set_xticks(list(range(*xrange)) + [xrange[-1]])
 ax.set_ylim(*yrange)
-ax.set_yticks(range(*yrange) + [yrange[-1]])
+ax.set_yticks(list(range(*yrange)) + [yrange[-1]])
 ax.set_aspect(1)
 
 pyplot.show()

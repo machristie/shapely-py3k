@@ -548,7 +548,7 @@ class GeometrySequence(object):
 
     def __iter__(self):
         self._update()
-        for i in xrange(self.__len__()):
+        for i in range(self.__len__()):
             yield self._get_geom_item(i)
 
     def __len__(self):
@@ -572,7 +572,7 @@ class GeometrySequence(object):
                     "Heterogenous geometry collections are not sliceable")
             res = []
             start, stop, stride = key.indices(m)
-            for i in xrange(start, stop, stride):
+            for i in range(start, stop, stride):
                 res.append(self._get_geom_item(i))
             return type(self.__p__)(res or None)
         else:
