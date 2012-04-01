@@ -25,7 +25,7 @@ def dumps(ob):
     """Dump a WKB representation of a geometry to a byte string."""
     if ob is None or ob._geom is None:
         raise ValueError("Null geometry supports no operations")
-    return lgeos.GEOSGeomToWKT(ob._geom)
+    return lgeos.GEOSGeomToWKT(ob._geom).decode('utf-8')
 
 def dump(ob, fp):
     """Dump a geometry to an open file."""

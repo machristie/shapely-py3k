@@ -379,7 +379,7 @@ class BaseGeometry(object):
     def relate(self, other):
         """Returns the DE-9IM intersection matrix for the two geometries 
         (string)"""
-        return self.impl['relate'](self, other)
+        return self.impl['relate'](self, other).decode('utf-8')
 
     def contains(self, other):
         """Returns True if the geometry contains the other, else False"""

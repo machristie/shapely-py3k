@@ -3,5 +3,5 @@
 from shapely.geos import lgeos
 
 def explain_validity(ob):
-    return lgeos.GEOSisValidReason(ob._geom)
+    return lgeos.GEOSisValidReason(ob._geom).decode('utf-8')
 
